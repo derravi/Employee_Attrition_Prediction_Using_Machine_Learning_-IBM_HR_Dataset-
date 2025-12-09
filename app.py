@@ -9,7 +9,7 @@ with open("Models/model.pkl","rb") as f:
     models = pickle.load(f)
 
 lr = models['linearRegre']
-encode = models['encoder']
+encoder = models['encoder']
 std = models['standard_scaler']
 xgb = models['XGBooster']
 temp1 = models['temp1_encode_columns']
@@ -59,7 +59,7 @@ def prediction(predict:UserInput):
 
     #Lets encode the all the Labeled Data Columns
     for i in temp1:
-        data[i] = encode[i].transform(data[i])
+        data[i] = encoder[i].transform(data[i])
     
     #Lets Scaldown the All the Data
     scaled_data = std.transform(data)
@@ -71,7 +71,7 @@ def prediction(predict:UserInput):
     lr_class = int(round(lr_predict[0]))
     xgb_class = int(round(xgboost_predict[0]))
 
-    attrition_encoder = encode['Attrition']
+    attrition_encoder = encoder['Attrition']
 
     #Lets invers transform
     lr_final = attrition_encoder.inverse_transform([lr_class])[0]
