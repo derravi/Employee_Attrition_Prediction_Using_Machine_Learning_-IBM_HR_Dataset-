@@ -20,8 +20,6 @@ class UserInput(BaseModel):
     JobRole: Annotated[str, Field(..., description="Enter Job Role", examples=["Research Scientist"])]
     JobSatisfaction: Annotated[float, Field(..., description="Enter Job Satisfaction (1–4)", examples=[4])]
     
-    MaritalStatus: Annotated[str, Field(..., description="Enter Marital Status", examples=["Single"])]
-    
     MonthlyIncome: Annotated[float, Field(..., description="Enter Monthly Income", examples=[6500])]
     MonthlyRate: Annotated[float, Field(..., description="Enter Monthly Rate", examples=[20000])]
     NumCompaniesWorked: Annotated[float, Field(..., description="Enter Number of Companies Worked Before", examples=[2])]
@@ -31,11 +29,9 @@ class UserInput(BaseModel):
     PercentSalaryHike: Annotated[float, Field(..., description="Enter Percent Salary Hike", examples=[12])]
     PerformanceRating: Annotated[float, Field(..., description="Enter Performance Rating (1–4)", examples=[3])]
     RelationshipSatisfaction: Annotated[float, Field(..., description="Enter Relationship Satisfaction (1–4)", examples=[3])]
-    StockOptionLevel: Annotated[float, Field(..., description="Enter Stock Option Level (0–3)", examples=[1])]
     
     TotalWorkingYears: Annotated[float, Field(..., description="Enter Total Working Years", examples=[8])]
     TrainingTimesLastYear: Annotated[float, Field(..., description="Enter Number of Trainings Last Year", examples=[3])]
-    WorkLifeBalance: Annotated[float, Field(..., description="Enter Work Life Balance (1–4)", examples=[3])]
     
     YearsAtCompany: Annotated[float, Field(..., description="Enter Years at Company", examples=[4])]
     YearsInCurrentRole: Annotated[float, Field(..., description="Enter Years in Current Role", examples=[3])]
